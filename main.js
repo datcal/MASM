@@ -65,7 +65,6 @@ const createWindow = () => {
     },
   });
 
-  mainWindow.setTitle("My App");
   // and load the index.html of the app.
   mainWindow.loadFile("app/screens/main.html");
 
