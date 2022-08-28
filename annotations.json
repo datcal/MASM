@@ -1,0 +1,14 @@
+[
+  {
+    "start": 1.1,
+    "end": 3.8,
+    "attributes": { "label": "MIDI", "highlight": true },
+    "data": {}
+  },
+  {
+    "start": 13.6,
+    "end": 26.7,
+    "attributes": {},
+    "data": { "note": "CC:80:79:0" }
+  }
+]
