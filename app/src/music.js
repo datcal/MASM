@@ -7,7 +7,7 @@
   */
  document.addEventListener('DOMContentLoaded', function() {
 
-   
+    audioFile = localStorage.audioFile ? JSON.parse(localStorage.audioFile) : [];
      // Init wavesurfer
      wavesurfer = WaveSurfer.create({
          container: '#waveform',
@@ -41,7 +41,7 @@
          })
          .on('success', function(data) {
              wavesurfer.load(
-                 '../../save/file1.wav',
+                audioFile['file'] ,
              );
          });
  

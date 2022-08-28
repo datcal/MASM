@@ -12,11 +12,18 @@ loadAudioFile.addEventListener('click', () => {
 //upon receiving a file, process accordingly
 ipcRenderer.on('file', (event, file) => {
   console.log('obtained file from main process: ' + file);
-    fs.copyFile(file, './save/file1.wav', (err) => {
+    /*fs.copyFile(file, './save/file1.wav', (err) => {
         if (err) throw err;
         alert("File Uploaded");
         document.location.href = "play.html";
     }
+    );*/
+    alert("File selected");
+    document.location.href = "play.html";
+    localStorage.audioFile = JSON.stringify(
+        {
+            file: file
+        }
     );
 });
 
