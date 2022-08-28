@@ -7,7 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron-forge start",
     "package": "electron-forge package",
-    "make": "electron-forge make"
+    "make": "electron-forge make",
+    "app:dir": "electron-builder --dir",
+    "app:dist": "electron-builder"
   },
   "author": "burak@burakhamza.com",
   "license": "MIT",
@@ -18,12 +20,18 @@
     "@electron-forge/maker-squirrel": "^6.0.0-beta.65",
     "@electron-forge/maker-zip": "^6.0.0-beta.65",
     "electron": "^20.1.0",
-    "electron-builder": "22.4.1",
-		"electron-builder-notarize": "^1.1.1"
+    "electron-builder": "^23.3.3",
+    "electron-builder-notarize": "^1.1.1"
   },
   "dependencies": {
     "electron-squirrel-startup": "^1.0.0",
     "wavesurfer.js": "^6.2.0"
+  },
+  "build": {
+    "appId": "app.datcal.msam",
+    "mac": {
+      "category": "public.app-category.lifestyle"
+    }
   },
   "config": {
     "forge": {
