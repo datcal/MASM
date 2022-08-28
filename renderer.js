@@ -11,6 +11,5 @@ const createWindow = () => {
     }
   })
 
-  win.loadFile('index.html')
+  win.loadFile('./app/screens/main.html')
 }
-// ...

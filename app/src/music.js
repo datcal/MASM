@@ -2,11 +2,12 @@
  * Create a WaveSurfer instance.
  */
  var wavesurfer; // eslint-disable-line no-var
-
  /**
   * Init & load.
   */
  document.addEventListener('DOMContentLoaded', function() {
+
+   
      // Init wavesurfer
      wavesurfer = WaveSurfer.create({
          container: '#waveform',
@@ -36,11 +37,11 @@
      wavesurfer.util
          .fetchFile({
              responseType: 'json',
-             url: 'rashomon.json'
+             url: '../data/data.json'
          })
          .on('success', function(data) {
              wavesurfer.load(
-                 'sterio.mp3'
+                 '../../save/file1.wav',
              );
          });
  
@@ -60,7 +61,7 @@
              //         wavesurfer.getDuration()
              //     )
              // );
-             fetch('annotations.json')
+             fetch('../data/annotations.json')
                  .then(r => r.json())
                  .then(data => {
                      loadRegions(data);
@@ -72,6 +73,8 @@
          e.stopPropagation();
          // Play on click, loop on shift click
          e.shiftKey ? region.playLoop() : region.play();
+         let form = document.forms.edit;
+            form.style.opacity = 0;
      });
      wavesurfer.on('region-click', editAnnotation);
      wavesurfer.on('region-updated', saveRegions);
@@ -103,6 +106,7 @@
      ).addEventListener('click', function() {
          let form = document.forms.edit;
          let regionId = form.dataset.region;
+         form.style.opacity = 0;
          if (regionId) {
              wavesurfer.regions.list[regionId].remove();
              form.reset();
@@ -257,3 +261,16 @@
      showNote.el.textContent = region.data.note || '–';
  }
  
+
+
+
+
+function onEnabled() {
+  console.log('Enabled');
+    // Inputs
+    WebMidi.inputs.forEach(input => console.log(input.manufacturer, input.name));
+    
+    // Outputs
+    WebMidi.outputs.forEach(output => console.log(output.manufacturer, output.name));
+
+}

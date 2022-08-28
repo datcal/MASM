@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>MASM - Mark and Send MIDI</title>
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
-    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/bootstrap.min.css" rel="stylesheet">
 
     <style>
        region.wavesurfer-region:before {
@@ -16,12 +16,14 @@
         box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.05) inset, 0px 0px 8px rgba(82, 168, 236, 0.6);
         }
         </style>
-        <link href="style.css" rel="stylesheet">
+        <link href="../assets/style.css" rel="stylesheet">
 </head>
 <body>
     
     <div class="container">
+        <button id="backMain" name="backMain" class="btn btn-success btn-block">Back</button>
 
+        <hr>
         <p id="subtitle" class="text-center text-info">&nbsp;</p>
 
     <div id="wave-timeline"></div>
@@ -72,17 +74,20 @@
     </form>
     </div>
     
-
+    <button id="saveAnnotation" name="saveAnnotation" class="btn btn-success btn-block">Save Annotation</button>
 
   
-    <script src="./node_modules/wavesurfer.js/dist/wavesurfer.js"></script>
+    <script src="../../node_modules/wavesurfer.js/dist/wavesurfer.js"></script>
     
 
-    <script src="./node_modules/wavesurfer.js/dist/plugin/wavesurfer.timeline.js"></script>
-        <script src="./node_modules/wavesurfer.js/dist/plugin/wavesurfer.regions.js"></script>
-        <script src="./node_modules/wavesurfer.js/dist/plugin/wavesurfer.minimap.js"></script>
+    <script src="../../node_modules/wavesurfer.js/dist/plugin/wavesurfer.timeline.js"></script>
+        <script src="../../node_modules/wavesurfer.js/dist/plugin/wavesurfer.regions.js"></script>
+        <script src="../../node_modules/wavesurfer.js/dist/plugin/wavesurfer.minimap.js"></script>
+        <!-- Script tag an HTML page -->
 
-    <script src="./music.js"></script>
+    <script src="../src/music.js"></script>
+    <script src="../src/file.js"></script>
+    <script src="../src/play.js"></script>
 
 
 </body>
