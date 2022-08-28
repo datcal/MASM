@@ -1,6 +1,6 @@
 {
   "name": "masm",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "mark and send midi",
   "main": "main.js",
   "scripts": {
